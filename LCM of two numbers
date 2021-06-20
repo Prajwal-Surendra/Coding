@@ -1,0 +1,25 @@
+#include <stdio.h>
+int flcm(int a,int b);
+int main()
+{
+   int a=0,b=0,lcm;
+    printf("Enter the 2 numbers to find lcm:\n");
+    scanf("%d %d", &a, &b);
+    lcm = flcm(a,b);
+    printf("The LCM of %d and %d is: %d \n",a,b,lcm);
+    return 0; 
+}
+int flcm(int a,int b)
+{
+    static int temp=1;
+    if(temp%a==0 && temp%b==0)
+    {
+        return temp;
+    }
+    else
+    {
+        temp++;
+        flcm(a,b);
+        return temp;
+    }
+}
